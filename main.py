@@ -44,6 +44,8 @@ class GridTradingBot:
         self.pool_keys = None
         self.token_account = None
         self.grid_levels = []
+        self.last_trade_price = None
+        self.last_trade_action = None
         self.setup_grid()
 
     def setup_grid(self):
@@ -124,11 +126,18 @@ class GridTradingBot:
             )
         )
         
-        return wsol_token_account, [create_instr, init_instr]
-
+        return wsol_token_account, [create_instr, init_instr] 
     def execute_trade(self, action: str, amount_in: int, 
                      minimum_out: int) -> Optional[str]:
         print(f"执行{action}交易...")
+        current_price = self.get_token_price()
+        if self.last_trade_price is not None:
+            if action == "sell" and current_price <= self.last_trade_price:
+                print(f"跳过卖出 - 当前价格(${current_price:.4f}) 未高于上次交易价格(${self.last_trade_price:.4f})")
+                return None
+            elif action == "buy" and self.last_trade_action == "buy":
+                print(f"跳过买入 - 上次操作已是买入")
+                return None
         print(f"输入数量: {amount_in}, 最小输出: {minimum_out}")
         
         wsol_amount = int(self.config.sol_amount * SOL_DECIMAL)
@@ -180,6 +189,9 @@ class GridTradingBot:
             ).value
             result = confirm_txn(txn_sig)
             print(f"交易结果: {result}")
+            if result:  # 更新价格
+              self.last_trade_price = current_price
+              self.last_trade_action = action
             return result
         except Exception as e:
             print(f"交易失败: {e}")
