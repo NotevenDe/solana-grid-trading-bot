@@ -70,8 +70,6 @@ class GridTradingBot:
         self.mint = (self.pool_keys.base_mint 
                     if self.pool_keys.base_mint != WSOL 
                     else self.pool_keys.quote_mint)
-
-
         
         print("检查代币账户...")
         token_account_check = self.config.client.get_token_accounts_by_owner(
@@ -222,7 +220,7 @@ class GridTradingBot:
         based_token, quote_token, base_reserve, quote_reserve, token_decimal = (
             get_token_reserves(self.pool_keys)
         )
-        print(f"目标 token: {based_token} | Quote token: {quote_token}")
+        print(f"based token: {based_token} | Quote token: {quote_token}")
         print(f"池子token容量: {base_reserve} | SOL 容量: {quote_reserve} | Token Decimal: {token_decimal}")    
         if token_account_instr:
             print("初始化代币账户...")
