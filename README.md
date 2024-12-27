@@ -1,2 +1,2 @@
 ﻿# solana-Bot
-donate address: 657ebS13WJ3aSinNnR2YycGNUtDDW4f2FkfZsUmHMyES
+donate address: 7mM5dWZPv5Tvn6RXr6sz2aXyoHfD955UY95inxmY3Pok
