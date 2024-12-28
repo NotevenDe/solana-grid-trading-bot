@@ -251,7 +251,9 @@ class GridTradingBot:
                     self.execute_trade("sell", amount_in, minimum_out)
                 
                 elif current_price > self.config.price_high:
-                    print("价格高于网格上限")
+                    print("价格高于网格上限 - 执行卖出")
+                    amount_in, minimum_out = self.calculate_amounts("buy")
+                    self.execute_trade("buy", amount_in, minimum_out)
                     
                 else:
                     closest_level = min(
