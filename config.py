@@ -11,8 +11,8 @@ PRIV_KEY = []
 payer_keypair = Keypair.from_bytes(PRIV_KEY)
 
 grid_size = 100 # 网格数量
-Price_low = 0.7
-Price_high = 0.8
+Price_low = 0.01
+Price_high = 0.03
 
 token_address = "GxdTh6udNstGmLLk9ztBb6bkrms7oLbrJp5yzUaVpump"  
 sol_in = 0.01
