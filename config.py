@@ -14,7 +14,7 @@ grid_size = 100 # 网格数量
 Price_low = 0.7
 Price_high = 0.8
 
-token_address = "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr"  
+token_address = "GxdTh6udNstGmLLk9ztBb6bkrms7oLbrJp5yzUaVpump"  
 sol_in = 0.01
 slippage = 1 #滑点
 percentage = 100
