@@ -1,2 +1,4 @@
-solders
-solana
+solana-py==0.26.0  
+solders==0.13.2   
+spl-token-utils==0.2.0  
+requests==2.31.0  
