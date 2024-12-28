@@ -2,6 +2,7 @@
 donate address: 7mM5dWZPv5Tvn6RXr6sz2aXyoHfD955UY95inxmY3Pok
 ```
 pip install solana-py solders spl-token-utils requests
+python main.py
 ```
 修改config.py
 导入密钥对 
