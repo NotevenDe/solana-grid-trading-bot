@@ -1,2 +1,4 @@
 ﻿# solana-grid-trading-Bot
 donate address: 7mM5dWZPv5Tvn6RXr6sz2aXyoHfD955UY95inxmY3Pok
+修改config.py 
+token contract，价格区间，网格数量，每次投入sol_in
